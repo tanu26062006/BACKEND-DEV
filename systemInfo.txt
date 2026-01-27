@@ -1,0 +1,28 @@
+
+CPU: AMD Ryzen 3 5300U with Radeon Graphics         
+Memory: 7.35 GB
+Platform: win32
+Free Memory: 1.21 GB
+Time: 27/1/2026, 3:11:35 pm
+-----------------------------
+
+CPU: AMD Ryzen 3 5300U with Radeon Graphics         
+Memory: 7.35 GB
+Platform: win32
+Free Memory: 1.18 GB
+Time: 27/1/2026, 3:11:40 pm
+-----------------------------
+
+CPU: AMD Ryzen 3 5300U with Radeon Graphics         
+Memory: 7.35 GB
+Platform: win32
+Free Memory: 1.17 GB
+Time: 27/1/2026, 3:11:45 pm
+-----------------------------
+
+CPU: AMD Ryzen 3 5300U with Radeon Graphics         
+Memory: 7.35 GB
+Platform: win32
+Free Memory: 1.15 GB
+Time: 27/1/2026, 3:11:50 pm
+-----------------------------
