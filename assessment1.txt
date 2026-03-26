@@ -1,0 +1,51 @@
+question-> Key Differences between SQL and NoSQL Databases
+
+SQL (Structured Query Language) databases are relational databases where data is stored in tables consisting of rows and columns. They follow a fixed schema. Examples include MySQL and PostgreSQL.
+
+NoSQL databases are non-relational databases where data is stored in formats like documents, key-value pairs, or graphs. They have a flexible schema. An example is MongoDB.
+
+Main Differences:
+
+SQL uses a fixed schema; NoSQL uses a flexible schema
+SQL stores structured data; NoSQL handles unstructured/semi-structured data
+SQL scales vertically; NoSQL scales horizontally
+SQL ensures strong consistency; NoSQL focuses on scalability and performance
+question->CAP theorem
+
+The CAP Theorem states that a distributed system can guarantee only two out of the following three properties at the same time:
+
+Consistency (C): All nodes return the same data
+Availability (A): Every request receives a response
+Partition Tolerance (P): The system continues to function despite network failures
+
+Reason:
+When a network partition occurs, the system must choose between consistency and availability. Therefore, it is impossible to guarantee all three properties simultaneously.
+
+question-> Scenarios Where MongoDB is Preferred
+
+MongoDB is preferred in the following cases:
+
+Dynamic Schema:
+When data structure changes frequently (e.g., user profiles with different fields)
+Large-Scale Applications:
+When handling large volumes of data or high user traffic
+Real-Time Applications:
+Applications like chat systems or analytics dashboards requiring fast read/write operations
+
+question-> Why MongoDB Uses BSON Instead of JSON
+
+MongoDB uses BSON (Binary JSON) internally instead of JSON.
+
+Reasons:
+
+BSON is faster to process due to its binary format
+It supports more data types (e.g., Date, ObjectId, Binary data)
+It provides more efficient storage and retrieval
+
+
+question->To find all students with GPA greater than 3.5 and enrolled in “CS101”:
+
+db.students.find({
+  gpa: { $gt: 3.5 },
+  courses: "CS101"
+})

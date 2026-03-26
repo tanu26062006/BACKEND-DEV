@@ -1,0 +1,104 @@
+Advantages of using Mongoose over native MongoDB driver
+
+Mongoose is an Object Data Modeling (ODM) library for MongoDB, built on top of the native driver.
+
+Advantages:
+
+Schema-based structure: Defines clear data structure and validation rules
+Built-in validation: Ensures data correctness before saving
+Middleware support: Allows execution of functions before/after operations
+Simplified queries: Easier syntax compared to native MongoDB driver
+Model abstraction: Provides a higher-level API for interacting with MongoDB
+
+
+
+2. Difference between findOneAndUpdate() and updateOne()
+
+Both methods are used to update documents, but they behave differently.
+
+findOneAndUpdate()
+-Finds a document and updates it
+-Returns the document (before or after update)
+-Can modify and fetch data in a single step
+Model.findOneAndUpdate({ name: "John" }, { age: 25 }, { new: true })
+updateOne()
+-Updates the first matching document
+-Does NOT return the updated document (only status/result)
+-Model.updateOne({ name: "John" }, { $set: { age: 25 } })
+Key Difference:
+findOneAndUpdate() → returns updated document
+updateOne() → returns update result (acknowledgement)
+3. Purpose of Middleware in Mongoose
+
+Middleware (also called hooks) are functions that run before or after certain operations.
+
+Purpose:
+
+Execute logic automatically (e.g., hashing passwords)
+Perform validation or logging
+Modify data before saving
+
+Example:
+
+schema.pre("save", function(next) {
+  console.log("Before saving data");
+  next();
+});
+
+
+
+4. Pagination in Mongoose
+
+Pagination is used to fetch data in smaller chunks.
+
+Implementation using skip and limit:
+
+const page = 2;
+const limit = 10;
+
+Model.find()
+  .skip((page - 1) * limit)
+  .limit(limit);
+
+Explanation:
+
+skip() → skips previous records
+limit() → limits number of records returned
+
+
+
+5. Embedding vs Referencing in MongoDB
+
+In MongoDB schema design, data can be stored in two ways:
+
+Embedding (Nested Documents)
+Data is stored inside a single document
+
+Use When:
+
+Data is related and frequently accessed together
+Data size is small
+
+Example:
+
+{
+  "name": "Amit",
+  "orders": [
+    { "item": "Book", "price": 200 }
+  ]
+}
+Referencing (Using IDs)
+Data is stored in separate collections and linked using references
+
+Use When:
+
+Data is large or shared across multiple documents
+Avoid duplication
+
+Example:
+
+{
+  "name": "Amit",
+  "orderId": "123"
+}
+
